@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -259,16 +260,7 @@
                 let imageUrl = id ? serialsData[id].image : '';
                 const fileInput = document.getElementById('serial-image');
                 if (fileInput.files.length > 0) {
-                    imageUrl = await uploadImageToImgBB('serial-image'); // اصلاح نام تابع
-                }
-                
-                // اصلاح نام تابع در خط پایین:
-                // چون نام تابع اصلی uploadImageToImgBB است:
-                // imageUrl = await uploadImageToImgBB('serial-image');
-
-                // جهت اطمینان از تابع صحیح استفاده می‌کنیم:
-                if (fileInput.files.length > 0) {
-                    imageUrl = await uploadImageToImgBB('serial-image');
+                    imageUrl = await uploadImageToImgBB('serial-image'); // نام تابع اصلاح شد
                 }
 
                 const payload = { name, epCount, genres, image: imageUrl };
@@ -416,7 +408,6 @@
                 });
 
                 closeEpisodeModal();
-                // بروزرسانی داده‌های محلی
                 await fetchSerials();
                 openSerialEpisodes(currentActiveSerialId);
             } catch (err) {
@@ -442,3 +433,4 @@
     </script>
 </body>
 </html>
+ 
