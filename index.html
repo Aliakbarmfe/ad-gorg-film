@@ -259,7 +259,7 @@
                 let imageUrl = id ? serialsData[id].image : '';
                 const fileInput = document.getElementById('serial-image');
                 if (fileInput.files.length > 0) {
-                    imageUrl = await cUploadImageToImgBB('serial-image'); // اصلاح نام تابع
+                    imageUrl = await UploadImageToImgBB('serial-image'); // اصلاح نام تابع
                 }
                 
                 // اصلاح نام تابع در خط پایین:
