@@ -1,3 +1,11 @@
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb', // افزایش حجم مجاز برای دریافت عکس بیس‌۶۴ از کاربر
+    },
+  },
+};
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -19,7 +27,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Image is required' });
     }
 
-    const formData = new URLSearchParams();
+    // استفاده از FormData استاندارد برای ارسال به ایمیج‌بی
+    const formData = new FormData();
     formData.append('key', apiKey);
     formData.append('image', image);
 
